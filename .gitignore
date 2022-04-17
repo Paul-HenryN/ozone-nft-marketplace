@@ -1,1 +1,11 @@
+# Vendor libraries
 assets/vendors/
+
+# Untreated images
+assets/img-raw*/
+
+# Design notes
+design/notes.txt
+
+# Pureref mood board
+design/mood-board.pur
