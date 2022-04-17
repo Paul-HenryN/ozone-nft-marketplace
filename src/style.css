@@ -1,0 +1,157 @@
+/**
+    CUSTOM PROPERTIES: start
+*/
+:root{
+    /* Colors */
+    --clr-primary: #578DDD;  
+    --clr-accent: #7A5CF3;
+    --clr-neutral-200: #2F2F2F;
+    --clr-neutral-100: #FFFFFF;
+
+    /* Typography */
+    --ff-primary: 'Josefin Sans', sans-serif;
+    --ff-neutral: 'Nunito', sans-serif;
+
+    --fs-primary-200: 4rem;
+    --fs-primary-100: 3rem;
+    --fs-primary-50: 2.5rem;
+    --fs-neutral: 1.5rem;
+    --fs-small: 1.25rem;
+
+    --fw-primary-200: bold;
+    --fw-primary-100: semi-bold;
+    --fw-neutral: regular;
+
+    /* Spacers */ 
+    --gap-1: 1.31rem;
+    --gap-2: calc(var(--gap-1) + 2.5rem);
+    --gap-3: calc(var(--gap-2) + 5.625rem);
+    --gap-4: calc(var(--gap-3) + 1.25rem);
+}
+/**
+    CUSTOM PROPERTIES: end
+*/
+
+
+/**
+    RESETS: start
+*/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/**
+    RESETS: end
+*/
+
+
+/**
+    BASE STYLES: start
+*/
+body{
+    background-color: var(--clr-neutral-100);
+    font-family: var(--ff-neutral);
+    font-size: var(--fs-neutral);
+    font-weight: var(--fw-neutral);
+}
+
+h1{
+    color: var(--clr-neutral-100);
+    font-family: var(--ff-primary);
+    font-size: var(--fs-primary-200);
+    font-weight: var(--fw-primary-200);
+    margin-bottom: var(--gap-2);
+}
+h2{
+    color: var(--clr-neutral-200);
+    font-family: var(--ff-neutral);
+    font-size: var(--fs-primary-100);
+    font-weight: var(--fw-primary-100);
+    margin-bottom: var(--gap-2);
+}
+h3{
+    color: var(--clr-accent);
+    font-family: var(--ff-primary);
+    font-size: var(--fs-primary-50);
+    font-weight: var(--fw-neutral);
+    margin-bottom: var(--gap-1);
+}
+
+/**
+    BASE STYLES: end
+*/
