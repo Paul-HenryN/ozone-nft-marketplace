@@ -188,7 +188,7 @@ a:active{
   }
   .navbar__brand{
     display: flex;
-    column-gap: 10px;
+    column-gap: 5px;
     align-items: flex-end;
   }
   .navbar__brand:link,
@@ -197,7 +197,7 @@ a:active{
   .navbar__brand:focus,
   .navbar__brand:active{
     color: var(--clr-neutral-200);
-    font-family: var(--ff-neutral);
+    font-family: var(--ff-primary);
     font-weight: var(--fw-primary-200);
     font-size: var(--fs-small);
   }
@@ -239,6 +239,7 @@ a:active{
   .intro{
     display: flex;
     align-items: center;
+    /* flex-direction: row-reverse; */
     justify-content: flex-end;
     column-gap: 13%;
     padding-inline: 5%;
@@ -312,7 +313,7 @@ a:active{
 
   .intro__paragraph{
     color: var(--clr-neutral-100);
-    margin-bottom: var(--gap-1);
+    margin-bottom: calc(var(--gap-1) + 0.5em);
   }
 
   .cta__explore{
@@ -326,11 +327,26 @@ a:active{
 /**
     COMPONENTS: start
 */
+.icon{
+  padding: 0.5em;
+}
+.icon-round{
+  border-radius: 100%;
+}
+.icon-bordered{
+  border: 2px solid currentColor;
+}
+
 .circ{
   aspect-ratio: 1;
   border-radius: 100%;
   transition: transform 0.25s ease;
   background-position: center center;
+  animation-name: circ-grow;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
+  transform: scale(0.7);
+  opacity: 0;
 }
 .circ:hover{
   transform: scale(1.05);
@@ -339,6 +355,16 @@ a:active{
   width: 70%;
   margin: auto;
   position: absolute;
+  animation-delay: 0.25s;
+}
+.mid__circ::before{
+  content: '';
+  width: 100%;
+  aspect-ratio: 1;
+  background: linear-gradient(0deg, var(--clr-accent), rgba(0,0,0,0));
+  position: absolute;
+  border-radius: 100%;
+  opacity: 0.5;
 }
 .fore__circ{
   background: url("../assets/images/header/header-1.webp");
@@ -350,20 +376,27 @@ a:active{
   width: 40%;
   margin: auto;
   position: absolute;
+  animation-delay: 0.75s;
+}
+.back__circ::before{
+  content: '';
+  width: 100%;
+  aspect-ratio: 1;
+  background: linear-gradient(0deg, var(--clr-accent), rgba(0,0,0,0));
+  position: absolute;
+  border-radius: 100%;
 }
 
 .btn{
   padding: 0.6em 1.5em;
   font-size: var(--fs-small);
   font-weight: var(--fw-primary-200);
+  font-family: var(--ff-primary);
 }
-
 .btn--primary{
   background-color: var(--clr-primary);
   color: var(--clr-neutral-100);
-  font-family: var(--ff-primary);
 }
-
 .btn--round{
   border-radius: 3.125rem;
 }
@@ -378,15 +411,26 @@ a:active{
   border: 2px solid var(--clr-neutral-100);
   color: var(--clr-neutral-100);
 }
-
-/* .overlay{
-  width: 100%;
-  aspect-ratio: 1;
-  background: red;
-  position: absolute;
-} */
 /**
     COMPONENTS: end
+*/
+
+
+/**
+    ANIMATIONS: start
+*/
+@keyframes circ-grow {
+  from{
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/**
+    ANIMATIONS: end
 */
 
 
